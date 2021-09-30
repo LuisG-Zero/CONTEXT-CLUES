@@ -10,18 +10,18 @@ var locations = ["Portapotty", "Hufflepuff House", "Honeyduke's Sweetshop", "Mil
 
 
 $(document).ready(function () {
-    for (var i = 0; i < 100; i++) {
-        var h3 = $('<h3> Accusation ' + (i + 1) + '</h3>');
+    for (var i = 1; i < 101; i++) {
+        var h3 = $('<h3> Accusation ' + (i + 0) + '</h3>');
         $(document.body).append(h3);
         var trigger = randomAlert(i);
         h3.click(trigger);
     }
-    function randomAlert(num) {
+    function randomAlert(i) {
         return function () {
             var name = Math.floor(Math.random() * names.length);
             var location = Math.floor(Math.random() * locations.length);
             var weapon = Math.floor(Math.random() * weapons.length);
-            alert("<h3>" + 'I accuse ' + names[name] + ' with the ' + weapons[weapon] + ' in the ' + locations[location] + '!');
+            alert("Accusation " + i + ': I accuse ' + names[name] + ' with the ' + weapons[weapon] + ' in the ' + locations[location] + '!');
         }
     }
 });
